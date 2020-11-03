@@ -1,0 +1,2 @@
+# iqbot
+ BOT - IqOption Platform. 
