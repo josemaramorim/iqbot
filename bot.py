@@ -21,7 +21,7 @@ minCoeficient = 0.8				#Minimum coeficient to operate
 candleId = 00000000				#Indentifier to check if win/loose and do for bucle trought dictionary 
 status = 'L'					#status of operation W is won / T is tie / L is lost
 direction = ''					#higher 'call' / #lower = 'put'
-maxOperations = 3				#Max number of operations that can be done ¡should be 1 more than the expected! (Should be autocalculated based on account money)
+maxOperations = 6				#Max number of operations that can be done 
 tryOperation = 1				#number of try to win. 
 estimatedEarning = BetAmount * coeficient   #Estimated Earning to calcualte Asgale 
 executeLoop = True				#Setted to true to get inside the loop and restart after winned Operation.
