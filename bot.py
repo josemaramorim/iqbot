@@ -229,7 +229,8 @@ while executeLoop:
 
 	if len(d) == MAXSIZE:										#Delefe first candle input on dictionary.
 		del d[candleId - (MAXSIZE-1)] 
-		print('Candle number '+str(candleId - (MAXSIZE-1))+' started at: '+str(timestamp_converter(candleFrom))+' deleted.')
+		print('Candle number '+str(candleId - (MAXSIZE-1))+' deleted.')
+		#print('New candle started at: '+str(timestamp_converter(candleFrom))+' created.')
 		setCoeficient()
 	
 	d.update(d2)
