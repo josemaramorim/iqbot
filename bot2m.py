@@ -12,9 +12,9 @@ api = IQ_Option(email,password) #define API to a variable.
 #VARIABLES
 MAXSIZE = 7						#define number of coincidences (should be -1 than expected)
 d = dict()						#define dictionary to save candles
-expirations_mode = 1	    	#reference: https://github.com/Lu-Yi-Hsun/iqoptionapi/issues/6
+expirations_mode = 2	    	#I don't know what this do
 CurrencyPair = "EURUSD"			#define pair to trade for example EURUSD or EURUSD-OTC
-candleTime = 60					#define candle timeframe in SECONDS
+candleTime = 120				#define candle timeframe in SECONDS
 BetAmount = 1000				#define initial bet amount in USD
 coeficient = 0.0				#coeficient to multiply when operation is loose
 minCoeficient = 0.8				#Minimum coeficient to operate
