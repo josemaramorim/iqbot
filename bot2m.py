@@ -64,7 +64,7 @@ def resetValues():				#Reset all bot values
 	counter = 0 		#reset counter to zero
 	d.clear()			#reset dictionary to empty
 	status = 'L'      	#reset status to Initial Value
-	BetAmount = 1000  	#reset bet amount to 1 
+	BetAmount = 1	  	#reset bet amount to 1 
 	tryOperation = 1	#reset try to 1
 	setCoeficient()		#reset coeficient 
 	stopStream()		#stop Stream
