@@ -15,13 +15,13 @@ d = dict()						#define dictionary to save candles
 expirations_mode = 1	    	#reference: https://github.com/Lu-Yi-Hsun/iqoptionapi/issues/6
 CurrencyPair = "EURUSD"			#define pair to trade for example EURUSD or EURUSD-OTC
 candleTime = 60					#define candle timeframe in SECONDS
-BetAmount = 1000				#define initial bet amount in USD
+BetAmount = 1					#define initial bet amount in USD
 coeficient = 0.0				#coeficient to multiply when operation is loose
 minCoeficient = 0.8				#Minimum coeficient to operate
 candleId = 00000000				#Indentifier to check if win/loose and do for bucle trought dictionary 
 status = 'L'					#status of operation W is won / T is tie / L is lost
 direction = ''					#higher 'call' / #lower = 'put'
-maxOperations = 6				#Max number of operations that can be done 
+maxOperations = 10				#Max number of operations that can be done 
 tryOperation = 1				#number of try to win. 
 estimatedEarning = BetAmount * coeficient   #Estimated Earning to calcualte Asgale 
 executeLoop = True				#Setted to true to get inside the loop and restart after winned Operation.
