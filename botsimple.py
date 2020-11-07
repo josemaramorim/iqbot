@@ -64,7 +64,7 @@ def resetValues():				#Reset all bot values
 	counter = 0 		#reset counter to zero
 	d.clear()			#reset dictionary to empty
 	status = 'L'      	#reset status to Initial Value
-	BetAmount = 1  		#reset bet amount to 1 
+	BetAmount = 100  	#reset bet amount to 1 
 	tryOperation = 1	#reset try to 1
 	setCoeficient()		#reset coeficient 
 	stopStream()		#stop Stream
@@ -93,6 +93,7 @@ def higherOrlower(direction): 	#CALL or PUT
 		print('¡Order Ok!')
 	else:
 		print('Sorry, order fail.')	
+		
 
 def asgale():					#Define Martingale
 	global BetAmount
@@ -117,6 +118,13 @@ def winOrLoose():				#Check if operation Win or Loose
 	elif result < 0:
 		status = 'L'
 		#asgale() on simple mode asgale shouldbe deactivated
+		print('Operation loosed, waiting 10 minutes secs to continue.')
+		
+		while i <= 10:
+			time.sleep(60)
+			print(str(i)+' Minute')
+			i = i + 1
+
 	else: 
 		status = 'T'
 		tryOperation = tryOperation - 1
@@ -130,7 +138,7 @@ print(CurrencyPair)		#Print pair to trade
 setCoeficient() 		#Define coeficient
 startStream() 			#Initialize stream to get realtime candles.
 
-print('Bot is running and waiting for '+MAXSIZE+' candles inline...')
+print('Bot is running and waiting for '+str(MAXSIZE)+' candles inline...')
 
 #######################################################################################################################################
 
