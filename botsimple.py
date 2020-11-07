@@ -118,7 +118,7 @@ def winOrLoose():				#Check if operation Win or Loose
 	elif result < 0:
 		status = 'L'
 		print('Operation lost, waiting 10 minutes to continue.')
-		time.sleep(600)				
+		time.sleep(30)				
 	else:
 		status = 'T'
 		print('Operation tie, waiting 10 minutes to continue.')
@@ -174,15 +174,13 @@ while executeLoop:
 				executeLoop = True 
 				print('¡Win! Resetting values and restarting...')
 				d2 = {}										#Define d2 as empty to be empty updated on the last step
-				resetValues() 								#resetea los valores para volver a iniciar					
-				break
+				resetValues() 								#resetea los valores para volver a iniciar									
 
 			else:
 				executeLoop = True 
 				print('Resetting values and restarting...')
 				d2 = {}										#Define d2 as empty to be empty updated on the last step
-				resetValues() 								#resetea los valores para volver a iniciar					
-				break
+				resetValues() 								#resetea los valores para volver a iniciar									
 				
 		if counter == ((MAXSIZE-1) * -1):						#Do a CALL
 			higherOrlower('call')
@@ -192,18 +190,14 @@ while executeLoop:
 				executeLoop = True 
 				print('¡Win! Resetting values and restarting...')
 				d2 = {}										#Define d2 as empty to be empty updated on the last step
-				resetValues() 								#resetea los valores para volver a iniciar					
-				break
-				
+				resetValues() 								#resetea los valores para volver a iniciar									
+
 			else:
 				executeLoop = True 
 				print('Resetting values and restarting...')
 				d2 = {}										#Define d2 as empty to be empty updated on the last step
-				resetValues() 								#resetea los valores para volver a iniciar					
-				break
-
-		else:
-			pass
+				resetValues() 								#resetea los valores para volver a iniciar									
+		
 
 	if len(d) == MAXSIZE:										#Delefe first candle input on dictionary.
 		del d[candleId - (MAXSIZE-1)] 
