@@ -117,17 +117,11 @@ def winOrLoose():				#Check if operation Win or Loose
 		print('Cha-ching! +$'+str(result))
 	elif result < 0:
 		status = 'L'
-		#asgale() on simple mode asgale shouldbe deactivated
-		print('Operation loosed, waiting 10 minutes secs to continue.')
-		
-		while i <= 10:
-			time.sleep(60)
-			print(str(i)+' Minute')
-			i = i + 1
-
-	else: 
+		print('Operation lost, waiting 10 minutes to continue.')
+		time.sleep(600)				
+	else:
 		status = 'T'
-		tryOperation = tryOperation - 1
+		print('Operation tie, waiting 10 minutes to continue.')
 
 #######################################################################################################################################
 
@@ -173,67 +167,43 @@ while executeLoop:
 	if coeficient >= minCoeficient: 							#Operates only if profit is major or equal than minCoeficient
 
 		if counter == (MAXSIZE-1):								#Do a PUT		
-			while tryOperation <= maxOperations:												
-				if status == 'L':								#LOST
-					print('Put')								#Print operation that will be done
-					higherOrlower('put')						#Put a lower order
-					winOrLoose()		
+			higherOrlower('put')
+			winOrLoose()
 
-				elif status == 'T':								#TIE
-					print('Tie')								#Print operation that will be done
-					higherOrlower('put')						#Put a lower order 
-					winOrLoose()		
+			if status =='W':
+				executeLoop = True 
+				print('¡Win! Resetting values and restarting...')
+				d2 = {}										#Define d2 as empty to be empty updated on the last step
+				resetValues() 								#resetea los valores para volver a iniciar					
+				break
 
-				elif status == 'W':								#WON
-					executeLoop = True 
-					print('¡Win! Resetting values and restarting...')
-					d2 = {}										#Define d2 as empty to be empty updated on the last step
-					resetValues() 								#resetea los valores para volver a iniciar					
-					break
+			else:
+				executeLoop = True 
+				print('Resetting values and restarting...')
+				d2 = {}										#Define d2 as empty to be empty updated on the last step
+				resetValues() 								#resetea los valores para volver a iniciar					
+				break
 				
-				tryOperation = tryOperation + 1
-
-				if tryOperation == (maxOperations + 1):
-					executeLoop = True  
-					print('Maximum attemps done, restarting...')
-					d2 = {}										#Define d2 as empty to be empty updated on the last step
-					resetValues() 								#resetea los valores para volver a iniciar     					
-					break
-				else: 
-					pass
-				
-
 		if counter == ((MAXSIZE-1) * -1):						#Do a CALL
-			while tryOperation <= maxOperations:	
-				if status == 'L':								#LOST
-					print('Call')								#Print operation that will be done
-					higherOrlower('call')						#Put a higher order
-					winOrLoose()
+			higherOrlower('call')
+			winOrLoose()
 
-				elif status == 'T':								#TIE
-					print('Tie')								#Print operation that will be done
-					higherOrlower('call')						#Put a higher order
-					winOrLoose()			
-
-				elif status == 'W':								#WON
-					executeLoop = True  
-					print('¡Win! Resetting values and restarting...')
-					d2 = {}										#Define d2 as empty to be empty updated on the last step
-					resetValues() 								#resetea los valores para volver a iniciar     					
-					break
-
-				tryOperation = tryOperation + 1		
+			if status=='W':
+				executeLoop = True 
+				print('¡Win! Resetting values and restarting...')
+				d2 = {}										#Define d2 as empty to be empty updated on the last step
+				resetValues() 								#resetea los valores para volver a iniciar					
+				break
 				
-				if tryOperation == (maxOperations + 1):
-					executeLoop = True  
-					print('Maximum attemps done, restarting...')
-					d2 = {}										#Define d2 as empty to be empty updated on the last step
-					resetValues() 								#resetea los valores para volver a iniciar     
-					break
-				else: 
-					pass
+			else:
+				executeLoop = True 
+				print('Resetting values and restarting...')
+				d2 = {}										#Define d2 as empty to be empty updated on the last step
+				resetValues() 								#resetea los valores para volver a iniciar					
+				break
 
-
+		else:
+			pass
 
 	if len(d) == MAXSIZE:										#Delefe first candle input on dictionary.
 		del d[candleId - (MAXSIZE-1)] 
