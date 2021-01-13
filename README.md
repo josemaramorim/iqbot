@@ -1,2 +1,2 @@
 # iqbot
- BOT - IqOption Platform. 
+ BOT - Choose Options Platform. 
